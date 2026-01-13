@@ -1,5 +1,37 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
 
 {% block content %}
-    <h1>products here</h1>
-{% endblock content %}
+<div class="container">
+    <h1>Our Grocery Products</h1>
+    <hr>
+
+    {% for category in categories %}
+    
+        <div class="category-section" style="margin-bottom: 40px;">
+            <h2 style="color: #2c3e50;">{{ category.name }}</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                
+                {% for product in category.product_set.all %}
+                    <div class="row">
+                        <div class="col-20">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{product.name}}</h3>
+                                    <p class="card-text">{{product.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                {% empty %}
+                    <p>No products in this category yet.</p>
+                {% endfor %}
+                
+            </div>
+        </div>
+        
+    {% endfor %}
+</div>
+{% endblock content%}
