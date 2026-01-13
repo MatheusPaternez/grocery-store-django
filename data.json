@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Gala Apples",
+    "price": 2.99,
+    "category": "Fruits",
+    "description": "Fresh, crisp and sweet organic Gala apples (1lb bag)."
+  },
+  {
+    "name": "Bananas",
+    "price": 0.89,
+    "category": "Fruits",
+    "description": "Premium yellow bananas, perfect for snacks or smoothies (1 bunch)."
+  },
+  {
+    "name": "Navel Oranges",
+    "price": 3.49,
+    "category": "Fruits",
+    "description": "Juicy and seedless Navel oranges, rich in Vitamin C (3lb bag)."
+  },
+  {
+    "name": "Organic Carrots",
+    "price": 1.99,
+    "category": "Vegetables",
+    "description": "Crunchy organic carrots, great for salads or cooking (1lb bag)."
+  },
+  {
+    "name": "Broccoli Crowns",
+    "price": 2.49,
+    "category": "Vegetables",
+    "description": "Fresh green broccoli crowns, high in fiber."
+  },
+  {
+    "name": "Baby Spinach",
+    "price": 3.99,
+    "category": "Vegetables",
+    "description": "Pre-washed baby spinach leaves, ready to eat (5oz container)."
+  },
+  {
+    "name": "Whole Milk",
+    "price": 3.29,
+    "category": "Dairy",
+    "description": "Fresh pasteurized whole milk (1 Gallon)."
+  },
+  {
+    "name": "Cheddar Cheese Block",
+    "price": 5.99,
+    "category": "Dairy",
+    "description": "Sharp cheddar cheese block, aged 6 months (8oz)."
+  },
+  {
+    "name": "Greek Yogurt",
+    "price": 1.29,
+    "category": "Dairy",
+    "description": "Plain non-fat Greek yogurt, high protein (5.3oz cup)."
+  },
+  {
+    "name": "Sourdough Bread",
+    "price": 4.49,
+    "category": "Bakery",
+    "description": "Freshly baked artisan sourdough loaf."
+  },
+  {
+    "name": "Butter Croissants",
+    "price": 5.99,
+    "category": "Bakery",
+    "description": "Flaky and buttery croissants, baked daily (4 pack)."
+  },
+  {
+    "name": "Everything Bagels",
+    "price": 3.99,
+    "category": "Bakery",
+    "description": "Soft bagels topped with sesame, poppy seeds, onion, and garlic (6 pack)."
+  },
+  {
+    "name": "Chicken Breast",
+    "price": 6.99,
+    "category": "Meat & Poultry",
+    "description": "Boneless and skinless chicken breasts, family pack (per lb)."
+  },
+  {
+    "name": "Ground Beef (80/20)",
+    "price": 5.49,
+    "category": "Meat & Poultry",
+    "description": "Fresh ground beef, 80% lean, perfect for burgers (1lb)."
+  },
+  {
+    "name": "Pork Chops",
+    "price": 7.49,
+    "category": "Meat & Poultry",
+    "description": "Center-cut bone-in pork chops (per lb)."
+  },
+  {
+    "name": "Atlantic Salmon Fillet",
+    "price": 12.99,
+    "category": "Seafood",
+    "description": "Fresh Atlantic salmon fillet, rich in Omega-3 (per lb)."
+  },
+  {
+    "name": "Large Shrimp",
+    "price": 14.99,
+    "category": "Seafood",
+    "description": "Raw, peeled and deveined large shrimp (1lb bag frozen)."
+  },
+  {
+    "name": "Tilapia Fillets",
+    "price": 8.99,
+    "category": "Seafood",
+    "description": "Mild white fish fillets, farm-raised (1lb bag)."
+  },
+  {
+    "name": "Orange Juice",
+    "price": 4.99,
+    "category": "Beverages",
+    "description": "100% pure orange juice, pulp-free (52oz)."
+  },
+  {
+    "name": "Sparkling Water",
+    "price": 0.99,
+    "category": "Beverages",
+    "description": "Lemon flavored sparkling water, zero calories (1 liter)."
+  },
+  {
+    "name": "Coffee Beans",
+    "price": 11.99,
+    "category": "Beverages",
+    "description": "Medium roast whole bean coffee (12oz bag)."
+  },
+  {
+    "name": "Potato Chips",
+    "price": 3.50,
+    "category": "Snacks",
+    "description": "Classic salted potato chips, family size bag."
+  },
+  {
+    "name": "Dark Chocolate Bar",
+    "price": 2.79,
+    "category": "Snacks",
+    "description": "70% cocoa dark chocolate bar with sea salt."
+  },
+  {
+    "name": "Mixed Nuts",
+    "price": 8.99,
+    "category": "Snacks",
+    "description": "Roasted and salted mix of almonds, cashews, and peanuts (10oz)."
+  },
+  {
+    "name": "Extra Virgin Olive Oil",
+    "price": 9.99,
+    "category": "Pantry",
+    "description": "Cold-pressed extra virgin olive oil from Italy (500ml)."
+  },
+  {
+    "name": "Spaghetti Pasta",
+    "price": 1.49,
+    "category": "Pantry",
+    "description": "Durum wheat semolina spaghetti (1lb box)."
+  },
+  {
+    "name": "Basmati Rice",
+    "price": 4.99,
+    "category": "Pantry",
+    "description": "Aromatic long-grain Basmati rice (2lb bag)."
+  },
+  {
+    "name": "Dish Soap",
+    "price": 2.99,
+    "category": "Household",
+    "description": "Lemon scented liquid dish soap, cuts grease effectively."
+  },
+  {
+    "name": "Paper Towels",
+    "price": 6.49,
+    "category": "Household",
+    "description": "Super absorbent 2-ply paper towels (2 rolls)."
+  },
+  {
+    "name": "Laundry Detergent",
+    "price": 10.99,
+    "category": "Household",
+    "description": "Liquid laundry detergent, fresh scent (30 loads)."
+  }
+]
