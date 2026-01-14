@@ -10,10 +10,10 @@ def register(request):
             user = form.save()
             login(request, user)
             return redirect('home')
-        else:
-            form = UserCreationForm()
-            # Pass context too ({'form':form})
-        return render(request,'registration/register.html', {'form':form})
+    else:
+        form = UserCreationForm()
+        # Pass context too ({'form':form})
+    return render(request,'registration/register.html', {'form':form})
     
 def check_is_staff(user):
     return user.is_staff
