@@ -13,39 +13,53 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-light">
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'products' %}"><img src="{% static '../static/assets/ps-logo.webp' %}" style="max-height: 40px; width: auto;" alt="Logo" /></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mt-2 text-dark" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link mt-2 text-dark" href="{% url 'products' %}">Products</a>
-            </li>
+      <nav class="navbar navbar-expand-sm navbar-light bg-light py-2">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-            {% if user.is_authenticated %}
-              <form action="{% url 'logout' %}" method="post" class="d-inline">
-                {% csrf_token %}
-                <button type="submit" class="nav-link mt-2 text-dark">Logout</button>
-              </form>
-            {% else %}
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
               <li class="nav-item">
-                <a class="nav-link mt-2 text-dark" href="{% url 'login' %}">Login</a>
+                <a class="nav-link me-3" href="{% url 'home' %}"><img src="{% static '../static/assets/ps-logo.webp' %}" style="max-height: 40px; width: auto;" alt="Logo" /></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mt-2 text-dark" href="{% url 'register' %}">Register</a>
+                <a class="nav-link text-dark px-3" href="{% url 'home' %}">Home</a>
               </li>
-            {% endif %}
-          </ul>
+              <li class="nav-item">
+                <a class="nav-link text-dark px-3" href="{% url 'products' %}">Products</a>
+              </li>
+            </ul>
+
+            <ul class="navbar-nav align-items-center">
+              {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                  <li class="nav-item">
+                    <a class="nav-link text-dark px-3" href="{% url 'staff_panel' %}">Staff</a>
+                  </li>
+                {% endif %}
+
+                <li class="nav-item">
+                  <form action="{% url 'logout' %}" method="post" class="d-flex align-items-center m-0">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-link text-dark bg-transparent border-0 px-3">Logout</button>
+                  </form>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link text-dark px-3" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-dark px-3" href="{% url 'register' %}">Register</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
     <main>
       {% block content %}
+
       {% endblock %}
     </main>
     <footer>
