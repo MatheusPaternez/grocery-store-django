@@ -40,6 +40,11 @@
 
             <ul class="navbar-nav align-items-center">
               {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                  <li class="nav-item">
+                    <a class="nav-link text-dark px-3" href="{% url 'admin:index' %}">Admin</a>
+                  </li>
+                {% endif %}
                 {% if user.is_staff %}
                   <li class="nav-item">
                     <a class="nav-link text-dark px-3" href="{% url 'staff_panel' %}">Staff</a>
