@@ -1,0 +1,54 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2><i class="bi bi-cart3"></i> My Cart</h2>
+    <hr>
+
+    {% if order and order.items.count > 0 %}
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in order.items.all %}
+                    <tr>
+                        <td>{{ item.product.name }}</td>
+                        <td>${{ item.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ item.get_cost }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr class="table-dark">
+                        <td colspan="3" class="text-end"><strong>Grand Total:</strong></td>
+                        <td><strong>${{ order.get_total_cost }}</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="text-end mt-4">
+            <a href="{% url 'products' %}" class="btn btn-outline-secondary">Continue Shopping</a>
+            
+            <a href="{% url 'checkout' %}" class="btn btn-success btn-lg">
+                Submit Order for Approval <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+    {% else %}
+        <div class="alert alert-info text-center py-5">
+            <h4>Your cart is empty!</h4>
+            <p>Go to the products page and pick some items!</p>
+            <a href="{% url 'products' %}" class="btn btn-primary">Go to Products</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

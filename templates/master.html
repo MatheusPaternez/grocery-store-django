@@ -28,6 +28,11 @@
               <li class="nav-item">
                 <a class="nav-link text-dark px-3" href="{% url 'products' %}">Products</a>
               </li>
+              {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link text-dark" href="{% url 'my_cart' %}"><i class="bi bi-cart"></i> Cart</a>
+                </li>
+              {% endif %}
             </ul>
 
             <ul class="navbar-nav align-items-center">

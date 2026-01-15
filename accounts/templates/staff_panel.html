@@ -1,43 +1,55 @@
 {% extends 'master.html' %}
 
 {% block content %}
-<div class="container mt-4">
-    <div class="alert alert-dark d-flex justify-content-between align-items-center" role="alert">
-        <div>
-            <h4 class="alert-heading mb-0"><i class="bi bi-shield-lock-fill"></i> Staff Area</h4>
-            <p class="mb-0">Welcome back, <strong>{{ user.username }}</strong>.</p>
-        </div>
-        <div>
-            <span class="badge bg-danger">Staff Access</span>
-        </div>
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2><i class="bi bi-speedometer2"></i>Staff Dashboard</h2>
+
+      <a href="/admin/products/product/" target="_blank" class="btn btn-dark"><i class="bi bi-box-seam"></i> Manage Products (Inventory)</a>
     </div>
 
-    <div class="row mt-4">
-        <div class="col-md-6 mb-4">
-            <div class="card h-100 border-primary">
-                <div class="card-header bg-primary text-white">
-                    Pending Orders
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">You have 0 new orders</h5>
-                    <p class="card-text">Manage customer carts and approve deliveries.</p>
-                    <a href="#" class="btn btn-outline-primary disabled">View Orders (Coming Soon)</a>
-                </div>
-            </div>
-        </div>
+    <div class="card shadow-sm">
+      <div class="card-header bg-warning text-dark">
+        <h5 class="mb-0">Orders Awaiting Approval</h5>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-hover mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Order #</th>
+              <th>Customer</th>
+              <th>Date</th>
+              <th>Total</th>
+              <th class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in orders %}
+              <tr>
+                <td>#{{ order.id }}</td>
+                <td>{{ order.user.username }}</td>
+                <td>{{ order.created_at|date:'M d, Y H:i' }}</td>
+                <td class="fw-bold">${{ order.get_total_cost }}</td>
+                <td class="text-end">
+                  <form action="{% url 'approve_order' order.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button class="btn btn-success btn-sm" title="Approve">✓ Approve</button>
+                  </form>
 
-        <div class="col-md-6 mb-4">
-            <div class="card h-100 border-success">
-                <div class="card-header bg-success text-white">
-                    Inventory
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Manage Products</h5>
-                    <p class="card-text">Add new items or update prices.</p>
-                    <a href="/admin/products/product/" class="btn btn-outline-success" target="_blank">Go to Inventory</a>
-                </div>
-            </div>
-        </div>
+                  <form action="{% url 'deny_order' order.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button class="btn btn-danger btn-sm" title="Deny">✕ Deny</button>
+                  </form>
+                </td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="5" class="text-center py-4 text-muted">No pending orders at the moment.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
-</div>
-{% endblock content %}
+  </div>
+{% endblock %}
