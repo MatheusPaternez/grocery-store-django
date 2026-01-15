@@ -1,0 +1,16 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-danger text-center">
+        <h3>Are you sure?</h3>
+        <p>You are about to delete <strong>{{ product.name }}</strong> permanently.</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-lg">Yes, Delete</button>
+            <a href="{% url 'products' %}" class="btn btn-secondary btn-lg">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}
