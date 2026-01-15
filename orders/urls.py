@@ -6,6 +6,7 @@ urlpatterns = [
     path('add/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
     path('cart/', views.my_cart, name='my_cart'),
     path('checkout/', views.checkout, name='checkout'),
+    path('history/', views.my_orders, name='my_orders'),
 
     # staff routes
     path('approve/<int:order_id>/', views.approve_order, name='approve_order'),

@@ -63,3 +63,8 @@ def deny_order(request, order_id):
     order.status = 'DENIED'
     order.save()
     return redirect('staff_panel')
+
+@login_required
+def my_orders(request):
+    orders = Order.objects.filter(user=request.user).exclude(status='CART').order_by('-created_at')
+    return render(request, 'my_orders.html', {'orders': orders})
